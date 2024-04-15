@@ -1,16 +1,15 @@
-import { Link, matchRoutes, useLocation } from "react-router-dom"
+import { Link, useLocation } from "react-router-dom"
 import classNames from 'classnames';
 
 const Header = () => {
 
   const HEADER_NAV = [
     { path: "/", label: "Home" },
-    { path: "/#/theatre", label: "Theatre" },
-    { path: "/#/programming", label: "Programming" },
+    { path: "/theatre", label: "Theatre" },
+    { path: "/programming", label: "Programming" },
   ];
 
   const location = useLocation();
-  const route = matchRoutes(HEADER_NAV, location);
 
   return (
     <header className="flex justify-center p-6 h-[72px] font-semibold text-lg border">
@@ -20,7 +19,7 @@ const Header = () => {
             key={nav.label}
             to={nav.path}
             className={classNames('btn', {
-              'text-red-500': route && route[0].pathname === nav.path
+              'text-red-500': location.pathname + location.hash === nav.path,
             })}
           >
             {nav.label}
