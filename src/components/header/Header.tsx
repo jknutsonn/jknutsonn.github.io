@@ -5,8 +5,8 @@ const Header = () => {
 
   const HEADER_NAV = [
     { path: "/", label: "Home" },
-    { path: "/theatre", label: "Theatre" },
-    { path: "/programming", label: "Programming" },
+    { path: "/#/theatre", label: "Theatre" },
+    { path: "/#/programming", label: "Programming" },
   ];
 
   const location = useLocation();
