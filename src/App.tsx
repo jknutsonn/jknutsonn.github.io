@@ -1,22 +1,23 @@
 import './App.css';
-import Header from './components/header/Header';
 import {
   Routes,
   Route,
   Outlet,
 } from "react-router-dom";
-import Home from './pages/home';
-import Theatre from './pages/theatre';
-import Programming from './pages/programming';
+import Header from './components/header/header';
+import Footer from './components/footer/footer';
+import { ROUTES } from './config';
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<PageLayout />}>
-          <Route index element={<Home />} />
-          <Route path="/theatre" element={<Theatre />} />
-          <Route path="/programming" element={<Programming />} />
+          <>
+            {ROUTES.map((nav) => (
+              <Route key={nav.path} path={nav.path} element={nav.element} />
+            ))}
+          </>
         </Route>
       </Routes>
     </div>
@@ -25,11 +26,11 @@ function App() {
 
 function PageLayout() {
   return (
-    <div>
+    <>
       <Header />
       <Outlet />
-      Footer
-    </div>
+      <Footer />
+    </>
   )
 }
 

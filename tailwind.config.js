@@ -1,5 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-import defaultTheme from 'tailwindcss/defaultTheme';
 
 module.exports = {
   content: [
@@ -14,7 +13,10 @@ module.exports = {
         sm: ["14px", "22px"],
         base: ["16px", "24px"],
         lg: ["18px", "24px"],
-      }
+      },
+      colors: {
+        'primary': '#E5F4FF',
+      },
     },
   },
   plugins: [],

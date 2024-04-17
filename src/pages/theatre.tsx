@@ -1,8 +1,9 @@
+import ShowGrid from "../components/shows/ShowGrid";
 
 function Theatre() {
   return (
     <div className="Theatre">
-      This is the Theatre page.
+      <ShowGrid />
     </div>
   );
 }
