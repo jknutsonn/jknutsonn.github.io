@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.7ca28b55.css",
-    "main.js": "/static/js/main.d89558b2.js",
+    "main.css": "/static/css/main.d2832160.css",
+    "main.js": "/static/js/main.128c173a.js",
     "static/js/453.3ae5ce53.chunk.js": "/static/js/453.3ae5ce53.chunk.js",
+    "static/media/timessquare.jpg": "/static/media/timessquare.0e31c21f639cbc5f117a.jpg",
     "index.html": "/index.html",
-    "main.7ca28b55.css.map": "/static/css/main.7ca28b55.css.map",
-    "main.d89558b2.js.map": "/static/js/main.d89558b2.js.map",
+    "main.d2832160.css.map": "/static/css/main.d2832160.css.map",
+    "main.128c173a.js.map": "/static/js/main.128c173a.js.map",
     "453.3ae5ce53.chunk.js.map": "/static/js/453.3ae5ce53.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7ca28b55.css",
-    "static/js/main.d89558b2.js"
+    "static/css/main.d2832160.css",
+    "static/js/main.128c173a.js"
   ]
 }
