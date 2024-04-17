@@ -1,5 +1,4 @@
 import Home from "./pages/home";
-import Programming from "./pages/programming";
 import Theatre from "./pages/theatre";
 
 type Route = {
