@@ -16,7 +16,7 @@ export const SHOWS : showType[] = [
     "dateSeen": "4/7/2024",
     "url": "https://2st.com/shows/mother-play",
     "isBroadway": true,
-    "img": "mother.JPG",
+    "img": "mother.jpg",
     "theatre": "Hayes Theater",
     "isRecommended": false,
     "synopsis": "It’s 1962, just outside of D.C., and matriarch Phyllis (Jessica Lange) is supervising her teenage children, Carl (Jim Parsons) and Martha (Celia Keenan-Bolger), as they move into a new apartment. Phyllis has strong ideas about what her children need to do and be to succeed, and woe be the child who finds their own path. Bolstered by gin and cigarettes, the family endures — or survives — the changing world around them. Blending flares of imaginative theatricality, surreal farce, and deep tenderness, this beautiful roller coaster ride reveals timeless truths of love, family, and forgiveness.",
