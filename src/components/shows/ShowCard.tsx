@@ -1,5 +1,3 @@
-import timesSquare from '../../assets/timessquare.jpg';
-
 interface ShowCardProps {
   show: any;
 }
@@ -7,7 +5,7 @@ interface ShowCardProps {
 const ShowCard = (props: ShowCardProps) => {
   const { show } = props;
 
-  const imageClasses = "border-primary rounded-md w-full h-64 mb-2";
+  const imageClasses = "border-primary rounded w-full h-64 mb-2";
   const getSinceSeen = (date: string) => {
     const dateSeen = new Date(date);
     const today = new Date();
@@ -43,17 +41,18 @@ const ShowCard = (props: ShowCardProps) => {
   }
 
   return (
-    <div className="border rounded p-2.5 my-4 mx-2 shadow-sm">
+    <div className="border rounded p-2.5 my-4 mx-2 shadow-sm bg-white min-w-[280px]">
       <div className="flex flex-col items-start">
         {show.img ? (
-          <img className={`${imageClasses} object-cover bg-primary`} src={`${process.env.PUBLIC_URL}/assets/images/${show.img}`} alt="" />
+          <img className={`${imageClasses} object-cover`} src={`${process.env.PUBLIC_URL}/assets/images/${show.img}`} alt="" />
         ) : (
-          <img className={`${imageClasses} object-cover`} src={timesSquare} alt="" />
+          <div className={`${imageClasses}`}>👍</div>
         )}
-        <div className="flex gap-1 text-sm text-gray-600 mb-1.5">
+        <div className="flex items-center gap-1 text-sm text-gray-600 mb-1.5">
           <div>
-            {show.theatre ? (<>{show.theatre}  ·</>) : (<></>)}
+            {show.theatre ? (<>{show.theatre}</>) : (<></>)}
           </div>
+          {show.theatre && <div>·</div>}
           {show.dateSeen && (
             <div className="">
               Seen {getSinceSeen(show.dateSeen)}
@@ -72,7 +71,7 @@ const ShowCard = (props: ShowCardProps) => {
           )}
         </div>
         <div className="text-left text-sm line-clamp-4 mb-2">
-          {show.synopsis && <>{show.synopsis}</>}
+          {/* {show.synopsis && <>{show.synopsis}</>} */}
         </div>
       </div>
     </div>

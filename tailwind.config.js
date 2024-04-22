@@ -15,7 +15,7 @@ module.exports = {
         lg: ["18px", "24px"],
       },
       colors: {
-        'primary': '#E5F4FF',
+        'primary': '#F4FAFF',
       },
     },
   },
