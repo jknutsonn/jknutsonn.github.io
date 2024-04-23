@@ -21,13 +21,13 @@ function Theatre() {
     {
       text: "Broadway",
       filter: function () {
-        return SHOWS.filter(s => s.isBroadway);
+        return SHOWS.filter(s => s.type === "BROADWAY");
       },
     },
     {
       text: "Off-Broadway",
       filter: function () {
-        return SHOWS.filter(s => !s.isBroadway);
+        return SHOWS.filter(s => s.type !== "BROADWAY");
       },
     }
   ];

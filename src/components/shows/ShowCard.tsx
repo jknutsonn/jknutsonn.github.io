@@ -5,7 +5,7 @@ interface ShowCardProps {
 const ShowCard = (props: ShowCardProps) => {
   const { show } = props;
 
-  const imageClasses = "border-primary rounded w-full h-64 mb-2";
+  const imageClasses = "border-primary rounded w-full h-64 2xl:h-80 mb-2";
   const getSinceSeen = (date: string) => {
     const dateSeen = new Date(date);
     const today = new Date();
@@ -61,7 +61,7 @@ const ShowCard = (props: ShowCardProps) => {
         </div>
         <div className="font-semibold text-xl mb-2">
           {show.url ? (
-            <a href={show.url} className="underline hover:no-underline">
+            <a href={show.url} className="underline hover:no-underline" target="_blank"  rel="noreferrer">
               {show.name}
             </a>
           ) : (
