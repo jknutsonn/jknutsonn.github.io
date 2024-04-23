@@ -1,7 +1,7 @@
 
 export interface showType {
   name: string,
-  dateSeen?: string,
+  dateSeen: string,
   url?: string,
   type?: "BROADWAY" | "OFF_BROADWAY",
   theatre?: string,

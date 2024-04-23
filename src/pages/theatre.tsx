@@ -48,13 +48,36 @@ function Theatre() {
 
   const isMobile = width <= 768;
 
+  const getNumBroadwayTheatres = () => {
+    return Array.from(new Set(SHOWS?.filter(x => x.type === "BROADWAY").map(x => x.theatre))).length;
+  }
+
+  const getNumShowsPastYear = () => {
+    let oneYearAgo = new Date();
+    oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
+    return SHOWS?.map(x => new Date(x.dateSeen ?? "")).filter(x => x > oneYearAgo).length;
+  }
+
   return (
     <div className="Theatre bg-primary">
       <div className="border-b border-slate-300">
-        <div className="bg-sky-500 h-72 flex items-center justify-center">
+        <div className="bg-sky-500 h-72 flex flex-col gap-12 items-center justify-center">
           <h1 className="text-white text-6xl font-bold">
             Jake-Up's 👍 Picks
           </h1>
+          <div className="text-white">
+            <div className="underline">
+              Quick Stats
+            </div>
+            <ul className="text-left list-disc">
+              <li>
+                {JSON.stringify(getNumShowsPastYear())} performances attended within the past year
+              </li>
+              <li>
+                Been to {getNumBroadwayTheatres()}/41 Broadway Theatres
+              </li>
+            </ul>
+          </div>
         </div>
         <div className="border flex flex-col md:flex-row items-center justify-center md:gap-8 uppercase bg-white overflow-x-auto whitespace-nowrap">
           {isMobile && (
