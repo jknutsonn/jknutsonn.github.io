@@ -1,7 +1,8 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import ShowGrid from "../components/shows/ShowGrid";
 import { SHOWS } from "../shows";
 import classNames from "classnames";
+import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 function Theatre() {
   const FILTERS = [
@@ -32,20 +33,45 @@ function Theatre() {
   ];
 
   const [selectedFilter, setSelectedFilter] = useState(FILTERS[0]);
+  const [showFilters, setShowFilters] = useState(false);
+  const [width, setWidth] = useState<number>(window.innerWidth);
+
+  function handleWindowSizeChange() {
+    setWidth(window.innerWidth);
+  }
+  useEffect(() => {
+    window.addEventListener('resize', handleWindowSizeChange);
+    return () => {
+      window.removeEventListener('resize', handleWindowSizeChange);
+    }
+  }, []);
+
+  const isMobile = width <= 768;
 
   return (
     <div className="Theatre bg-primary">
       <div className="border-b border-slate-300">
-        <div className="bg-sky-500 h-72 flex items-center justify-center ">
+        <div className="bg-sky-500 h-72 flex items-center justify-center">
           <h1 className="text-white text-6xl font-bold">
             Jake-Up's 👍 Picks
           </h1>
         </div>
-        <div className="border flex items-center justify-center gap-8 uppercase bg-white">
-          {FILTERS.map(filter => (
+        <div className="border flex flex-col md:flex-row items-center justify-center md:gap-8 uppercase bg-white overflow-x-auto whitespace-nowrap">
+          {isMobile && (
+            <button
+              className={classNames("py-2 w-full flex gap-2 items-center justify-center uppercase text-sky-500 font-bold", {
+                'border-b': showFilters,
+              })}
+              onClick={() => setShowFilters(!showFilters)}
+            >
+              Filters
+              {showFilters ? (<FaChevronDown className="text-sky-500" />) : (<FaChevronUp className="text-sky-500" />)}
+            </button>
+          )}
+          {(showFilters || !isMobile) && FILTERS.map(filter => (
             <button
               key={filter.text}
-              className={classNames("my-2 p-4 hover:text-sky-500", {
+              className={classNames("w-full md:w-fit md:my-2 p-2 md:p-4 hover:text-sky-500", {
                 'text-sky-500': selectedFilter.text === filter.text,
               })}
               onClick={() => setSelectedFilter(filter)}
