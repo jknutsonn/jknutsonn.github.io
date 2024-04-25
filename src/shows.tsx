@@ -342,5 +342,12 @@ export const SHOWS : showType[] = [
     "type": "BROADWAY",
     "theatre": "Bernard B. Jacobs Theatre",
     "isRecommended": false
+  },
+  {
+    "name": "Here There Are Blueberries",
+    "dateSeen": "4/24/2024",
+    "type": "OFF_BROADWAY",
+    "theatre": "New York Theatre Workshop",
+    "isRecommended": false
   }
 ]
